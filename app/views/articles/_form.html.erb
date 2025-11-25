@@ -1,0 +1,68 @@
+<!-- Form Partial - được dùng chung cho new và edit -->
+<%= form_with(model: article, local: true, style: "display: flex; flex-direction: column; gap: 20px;") do |form| %>
+  <!-- Hiển thị errors nếu có -->
+  <% if article.errors.any? %>
+    <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: 6px; padding: 15px;">
+      <h3 style="color: #991b1b; margin: 0 0 10px 0; font-size: 16px;">
+        ❌ <%= pluralize(article.errors.count, "lỗi") %> cần được sửa:
+      </h3>
+      <ul style="margin: 0; padding-left: 20px; color: #991b1b;">
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Title field -->
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <%= form.label :title, "Tiêu đề:", style: "font-weight: 600; color: #374151;" %>
+    <%= form.text_field :title, 
+        placeholder: "Nhập tiêu đề article...",
+        style: "padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; outline: none; transition: border-color 0.2s;",
+        onfocus: "this.style.borderColor='#2563eb'",
+        onblur: "this.style.borderColor='#d1d5db'" %>
+  </div>
+
+  <!-- Body field -->
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <%= form.label :body, "Nội dung:", style: "font-weight: 600; color: #374151;" %>
+    <%= form.text_area :body, 
+        rows: 10,
+        placeholder: "Viết nội dung article của bạn...",
+        style: "padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; font-family: inherit; outline: none; resize: vertical; transition: border-color 0.2s;",
+        onfocus: "this.style.borderColor='#2563eb'",
+        onblur: "this.style.borderColor='#d1d5db'" %>
+  </div>
+
+  <!-- Published checkbox -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <%= form.check_box :published, style: "width: 18px; height: 18px; cursor: pointer;" %>
+    <%= form.label :published, "Xuất bản ngay", style: "cursor: pointer; color: #374151;" %>
+  </div>
+
+  <!-- Submit button -->
+  <div style="display: flex; gap: 10px; margin-top: 10px;">
+    <%= form.submit article.new_record? ? "Tạo Article" : "Cập Nhật", 
+        style: "background: #2563eb; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s;",
+        onmouseover: "this.style.background='#1e40af'",
+        onmouseout: "this.style.background='#2563eb'" %>
+    
+    <%= link_to "Hủy", articles_path, 
+        style: "background: #6b7280; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; display: inline-block; text-align: center; transition: background 0.2s;",
+        onmouseover: "this.style.background='#4b5563'",
+        onmouseout: "this.style.background='#6b7280'" %>
+  </div>
+<% end %>
+
+<!-- Giải thích về form_with -->
+<div style="margin-top: 30px; padding: 15px; background: #f0f9ff; border-left: 4px solid #2563eb; border-radius: 4px;">
+  <h4 style="margin: 0 0 10px 0; color: #1e40af;">💡 Giải thích:</h4>
+  <ul style="margin: 0; padding-left: 20px; color: #1e40af; line-height: 1.6;">
+    <li><code>form_with(model: article)</code> - tự động biết action (create/update) dựa vào article mới hay đã tồn tại</li>
+    <li><code>form.text_field :title</code> - tạo input field cho attribute title</li>
+    <li><code>form.text_area :body</code> - tạo textarea cho nội dung dài</li>
+    <li><code>form.check_box :published</code> - tạo checkbox</li>
+    <li><code>pluralize()</code> - helper để số nhiều (1 lỗi, 2 lỗi)</li>
+  </ul>
+</div>

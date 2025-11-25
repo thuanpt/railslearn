@@ -1,0 +1,34 @@
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+  <div style="margin-bottom: 30px;">
+    <%= link_to "← Quay lại danh sách", articles_path, style: "color: #6b7280; text-decoration: none;" %>
+  </div>
+
+  <article style="background: white; border-radius: 8px; padding: 30px;">
+    <header style="border-bottom: 2px solid #e5e7eb; padding-bottom: 20px; margin-bottom: 20px;">
+      <h1 style="color: #111827; margin: 0 0 10px 0;"><%= @article.title %></h1>
+      
+      <div style="display: flex; gap: 15px; align-items: center; color: #6b7280; font-size: 14px;">
+        <% if @article.published %>
+          <span style="background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 4px;">✓ Published</span>
+        <% else %>
+          <span style="background: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 4px;">✗ Draft</span>
+        <% end %>
+        
+        <span>📅 <%= @article.created_at.strftime("%d/%m/%Y %H:%M") %></span>
+        
+        <% if @article.updated_at != @article.created_at %>
+          <span>✏️ Cập nhật: <%= @article.updated_at.strftime("%d/%m/%Y %H:%M") %></span>
+        <% end %>
+      </div>
+    </header>
+    
+    <div style="line-height: 1.8; color: #374151; font-size: 16px;">
+      <%= simple_format(@article.body) %>
+    </div>
+    
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; display: flex; gap: 15px;">
+      <%= link_to "✏️ Chỉnh sửa", edit_article_path(@article), style: "background: #059669; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
+      <%= link_to "🗑️ Xóa", @article, data: { turbo_method: :delete, turbo_confirm: "Bạn chắc chắn muốn xóa article này?" }, style: "background: #dc2626; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
+    </footer>
+  </article>
+</div>

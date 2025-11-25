@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"    # /about -> PagesController#about
   get "contact", to: "pages#contact" # /contact -> PagesController#contact
   
+  # RESTful routes cho Articles
+  # resources tự động tạo 7 routes: index, show, new, create, edit, update, destroy
+  resources :articles
+  
   # Cách viết khác (tương đương):
   # get "about" => "pages#about"
   # get "/about", to: "pages#about", as: :about_page
