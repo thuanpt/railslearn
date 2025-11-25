@@ -1,0 +1,37 @@
+<!-- View cho trang chủ -->
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1 style="color: #2563eb; text-align: center;">🎉 <%= @welcome_message %></h1>
+  
+  <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h2>Bạn đã học được gì?</h2>
+    <ul>
+      <li><strong>Controller:</strong> PagesController xử lý logic</li>
+      <li><strong>View:</strong> File này (home.html.erb) hiển thị giao diện</li>
+      <li><strong>ERB:</strong> Sử dụng <%= %> để in ra giá trị từ controller</li>
+    </ul>
+  </div>
+  
+  <div style="background: #dbeafe; padding: 15px; border-radius: 8px; margin: 20px 0;">
+    <p>⏰ <strong>Thời gian hiện tại:</strong> <%= @current_time.strftime("%d/%m/%Y %H:%M:%S") %></p>
+    <p><em>Giá trị này được truyền từ controller qua biến @current_time</em></p>
+  </div>
+  
+  <div style="margin-top: 30px; text-align: center;">
+    <h3>Các trang khác:</h3>
+    <p>
+      <%= link_to "Về chúng tôi", about_path, style: "color: #2563eb; margin: 0 10px;" %>
+      |
+      <%= link_to "Liên hệ", contact_path, style: "color: #2563eb; margin: 0 10px;" %>
+    </p>
+  </div>
+  
+  <div style="background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0;">
+    <h3>💡 Thử nghiệm ERB:</h3>
+    <p>2 + 2 = <%= 2 + 2 %></p>
+    <p>Ruby code: <%= ["Rails", "Ruby", "MVC"].join(", ") %></p>
+    
+    <% 3.times do |i| %>
+      <p>Lặp lần <%= i + 1 %></p>
+    <% end %>
+  </div>
+</div>
