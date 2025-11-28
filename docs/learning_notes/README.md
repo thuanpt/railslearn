@@ -57,12 +57,14 @@
 
 ### 🔄 Đang học
 
-7. **Task 7: Associations** (Sắp bắt đầu)
-   - One-to-Many
-   - Many-to-Many
-   - Polymorphic associations
+7. **[Task 7: Associations](task_07_associations.md)**
+   - Many-to-Many (Tags)
+   - Polymorphic (Comments)
+   - **Ngày hoàn thành:** 28/11/2025
 
-8. **Task 8: Forms & User Input**
+### 🔄 Đang học
+
+8. **Task 8: Forms & User Input** (Sắp bắt đầu)
    - Form builders
    - Nested forms
    - File uploads (Active Storage)
@@ -95,7 +97,7 @@
 ## 📊 Tiến độ
 
 ```
-[██████████████████████████████░░░░░] 60% - Đã hoàn thành 6/10 tasks cơ bản
+[███████████████████████████████████░░░] 70% - Đã hoàn thành 7/10 tasks cơ bản
 ```
 
 ---
