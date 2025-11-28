@@ -33,13 +33,15 @@
 
 ### 🔄 Đang học
 
-4. **Task 4: Active Record Basics** (Sắp bắt đầu)
-   - Migrations chi tiết
-   - Model methods
-   - Query interface
-   - Scopes
+4. **[Task 4: Active Record Basics](task_04_active_record.md)**
+   - Migrations
+   - Validations
+   - Enums & Scopes
+   - **Ngày hoàn thành:** 28/11/2025
 
-5. **Task 5: Model Validations**
+### 🔄 Đang học
+
+5. **Task 5: Model Validations** (Sắp bắt đầu)
    - Built-in validations
    - Custom validations
    - Error handling
@@ -88,7 +90,7 @@
 ## 📊 Tiến độ
 
 ```
-[███████████████░░░░░] 30% - Đã hoàn thành 3/10 tasks cơ bản
+[████████████████████░░░░░] 40% - Đã hoàn thành 4/10 tasks cơ bản
 ```
 
 ---
