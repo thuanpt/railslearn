@@ -41,12 +41,15 @@
 
 ### 🔄 Đang học
 
-5. **Task 5: Model Validations** (Sắp bắt đầu)
-   - Built-in validations
-   - Custom validations
-   - Error handling
+5. **[Task 5: Model Validations](task_05_validations.md)**
+   - Custom Validations
+   - Validator Classes
+   - Callbacks
+   - **Ngày hoàn thành:** 28/11/2025
 
-6. **Task 6: Active Record Queries**
+### 🔄 Đang học
+
+6. **Task 6: Active Record Queries** (Sắp bắt đầu)
    - Find, where, order
    - Joins và includes
    - N+1 problem
@@ -90,7 +93,7 @@
 ## 📊 Tiến độ
 
 ```
-[████████████████████░░░░░] 40% - Đã hoàn thành 4/10 tasks cơ bản
+[█████████████████████████░░░░░] 50% - Đã hoàn thành 5/10 tasks cơ bản
 ```
 
 ---
