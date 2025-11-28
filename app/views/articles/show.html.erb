@@ -31,4 +31,13 @@
       <%= link_to "🗑️ Xóa", @article, data: { turbo_method: :delete, turbo_confirm: "Bạn chắc chắn muốn xóa article này?" }, style: "background: #dc2626; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
     </footer>
   </article>
+
+  <div class="comments-section" style="margin-top: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0;">💬 Bình Luận (<%= @article.comments.count %>)</h3>
+    
+    <%= render @article.comments %>
+    
+    <h4 style="margin-top: 30px;">Thêm bình luận mới:</h4>
+    <%= render 'comments/form' %>
+  </div>
 </div>

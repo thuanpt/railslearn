@@ -1,3 +1,4 @@
+```erb
 <!-- Form Partial - được dùng chung cho new và edit -->
 <%= form_with(model: article, local: true, style: "display: flex; flex-direction: column; gap: 20px;") do |form| %>
   <!-- Hiển thị errors nếu có -->
@@ -31,6 +32,16 @@
         rows: 10,
         placeholder: "Viết nội dung article của bạn...",
         style: "padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; font-family: inherit; outline: none; resize: vertical; transition: border-color 0.2s;",
+        onfocus: "this.style.borderColor='#2563eb'",
+        onblur: "this.style.borderColor='#d1d5db'" %>
+  </div>
+
+  <!-- Tag list field -->
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <%= form.label :tag_list, "Tags (phân cách bằng dấu phẩy):", style: "font-weight: 600; color: #374151;" %>
+    <%= form.text_field :tag_list, 
+        placeholder: "ruby, rails, tutorial...",
+        style: "padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; outline: none; transition: border-color 0.2s;",
         onfocus: "this.style.borderColor='#2563eb'",
         onblur: "this.style.borderColor='#d1d5db'" %>
   </div>

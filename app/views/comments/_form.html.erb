@@ -1,0 +1,11 @@
+<%= form_with(model: [ @article, @article.comments.build ], local: true, style: "margin-top: 20px;") do |form| %>
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <%= form.text_area :body, 
+        rows: 3, 
+        placeholder: "Viết bình luận của bạn...", 
+        style: "width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; resize: vertical;" %>
+    
+    <%= form.submit "Gửi Bình Luận", 
+        style: "align-self: flex-start; background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;" %>
+  </div>
+<% end %>

@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   
   # RESTful routes cho Articles
   # resources tự động tạo 7 routes: index, show, new, create, edit, update, destroy
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   
   # Cách viết khác (tương đương):
   # get "about" => "pages#about"

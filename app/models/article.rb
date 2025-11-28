@@ -17,6 +17,16 @@ class Article < ApplicationRecord
   scope :recent, -> { order(created_at: :desc) }
   scope :popular, -> { order(view_count: :desc) }
 
+  def tag_list
+    tags.map(&:name).join(", ")
+  end
+
+  def tag_list=(names)
+    self.tags = names.split(",").map do |n|
+      Tag.where(name: n.strip).first_or_create!
+    end
+  end
+
   private
 
   def no_clickbait_keywords

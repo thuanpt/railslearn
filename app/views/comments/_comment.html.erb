@@ -1,0 +1,15 @@
+<div style="border-bottom: 1px solid #e5e7eb; padding: 15px 0;">
+  <p style="margin: 0 0 5px 0; color: #374151;">
+    <%= comment.body %>
+  </p>
+  
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #6b7280;">
+    <span>
+      <%= time_ago_in_words(comment.created_at) %> ago
+    </span>
+    
+    <%= link_to "Xóa", [comment.commentable, comment], 
+        data: { turbo_method: :delete, turbo_confirm: "Bạn có chắc chắn?" },
+        style: "color: #dc2626; text-decoration: none;" %>
+  </div>
+</div>
