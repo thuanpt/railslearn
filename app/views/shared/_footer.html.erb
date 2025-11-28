@@ -1,0 +1,24 @@
+<footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-section">
+      <h3>Myapp</h3>
+      <p>Learning Rails step by step.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Links</h3>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Articles", articles_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <p>Built with ❤️ using Ruby on Rails</p>
+      <p>&copy; <%= Time.current.year %> Myapp. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

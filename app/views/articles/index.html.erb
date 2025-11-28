@@ -1,53 +1,49 @@
-<div style="max-width: 1200px; margin: 0 auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-    <h1 style="color: #1e40af; margin: 0;">📝 Danh Sách Articles</h1>
-    <%= link_to "➕ Tạo Article Mới", new_article_path, style: "background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;" %>
-  </div>
+<% provide(:title, "Articles") %>
 
-  <% if @articles.any? %>
-    <div style="display: grid; gap: 20px;">
-      <% @articles.each do |article| %>
-        <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; transition: box-shadow 0.2s;">
-          <div style="display: flex; justify-content: space-between; align-items: start;">
-            <div style="flex: 1;">
-              <h2 style="margin: 0 0 10px 0; color: #111827;">
-                <%= link_to article.title, article, style: "color: #1e40af; text-decoration: none;" %>
-              </h2>
-              
-              <p style="color: #6b7280; margin: 10px 0;">
-                <%= truncate(article.body, length: 200) %>
-              </p>
-              
-              <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center;">
-                <% if article.published %>
-                  <span style="background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 4px; font-size: 14px;">✓ Published</span>
-                <% else %>
-                  <span style="background: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 4px; font-size: 14px;">✗ Draft</span>
-                <% end %>
-                
-                <span style="color: #9ca3af; font-size: 14px;">
-                  <%= article.created_at.strftime("%d/%m/%Y") %>
-                </span>
-              </div>
-            </div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+  <h1>📝 Articles</h1>
+  <%= link_to "➕ New Article", new_article_path, class: "btn btn-primary" %>
+</div>
+
+<% if @articles.any? %>
+  <div style="display: grid; gap: 20px;">
+    <% @articles.each do |article| %>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div style="flex: 1;">
+            <h2 style="margin-top: 0;">
+              <%= link_to article.title, article, style: "text-decoration: none;" %>
+            </h2>
             
-            <div style="display: flex; gap: 10px; margin-left: 20px;">
-              <%= link_to "👁️ Xem", article, style: "color: #2563eb; text-decoration: none;" %>
-              <%= link_to "✏️ Sửa", edit_article_path(article), style: "color: #059669; text-decoration: none;" %>
-              <%= link_to "🗑️ Xóa", article, data: { turbo_method: :delete, turbo_confirm: "Bạn chắc chắn muốn xóa?" }, style: "color: #dc2626; text-decoration: none;" %>
+            <p style="color: var(--gray-500);">
+              <%= truncate(article.body, length: 150) %>
+            </p>
+            
+            <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center; font-size: 0.9rem;">
+              <% if article.published %>
+                <span style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 4px;">Published</span>
+              <% else %>
+                <span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px;">Draft</span>
+              <% end %>
+              
+              <span style="color: var(--gray-500);">
+                <%= time_ago_in_words(article.created_at) %> ago
+              </span>
             </div>
           </div>
+          
+          <div style="display: flex; gap: 10px; margin-left: 20px;">
+            <%= link_to "View", article, class: "btn btn-secondary", style: "padding: 5px 10px; font-size: 0.9rem;" %>
+            <%= link_to "Edit", edit_article_path(article), class: "btn btn-success", style: "padding: 5px 10px; font-size: 0.9rem;" %>
+            <%= link_to "Delete", article, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger", style: "padding: 5px 10px; font-size: 0.9rem;" %>
+          </div>
         </div>
-      <% end %>
-    </div>
-  <% else %>
-    <div style="text-align: center; padding: 60px 20px; background: #f9fafb; border-radius: 8px;">
-      <p style="color: #6b7280; font-size: 18px; margin: 0 0 20px 0;">Chưa có article nào</p>
-      <%= link_to "Tạo Article Đầu Tiên", new_article_path, style: "background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;" %>
-    </div>
-  <% end %>
-  
-  <div style="margin-top: 30px; text-align: center;">
-    <%= link_to "← Về trang chủ", root_path, style: "color: #6b7280; text-decoration: none;" %>
+      </div>
+    <% end %>
   </div>
-</div>
+<% else %>
+  <div class="card" style="text-align: center; padding: 60px;">
+    <p style="font-size: 1.2rem; color: var(--gray-500);">No articles found.</p>
+    <%= link_to "Create your first article", new_article_path, class: "btn btn-primary", style: "margin-top: 20px;" %>
+  </div>
+<% end %>

@@ -25,15 +25,15 @@
 
 ### 🔄 Đang học
 
-3. **Task 3: Views & ERB Templates** (Sắp bắt đầu)
-   - Layouts
-   - Partials nâng cao
-   - View helpers
-   - Asset pipeline
+3. **[Task 3: Views & ERB Templates](task_03_views_erb.md)**
+   - Layouts & Partials
+   - View Helpers
+   - Asset Pipeline (CSS)
+   - **Ngày hoàn thành:** 28/11/2025
 
-### 📝 Kế hoạch tiếp theo
+### 🔄 Đang học
 
-4. **Task 4: Active Record Basics**
+4. **Task 4: Active Record Basics** (Sắp bắt đầu)
    - Migrations chi tiết
    - Model methods
    - Query interface
@@ -88,7 +88,7 @@
 ## 📊 Tiến độ
 
 ```
-[████████░░░░░░░░░░] 20% - Đã hoàn thành 2/10 tasks cơ bản
+[███████████████░░░░░] 30% - Đã hoàn thành 3/10 tasks cơ bản
 ```
 
 ---

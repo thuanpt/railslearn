@@ -1,0 +1,14 @@
+<header class="main-header">
+  <div class="container header-content">
+    <div class="logo">
+      <%= link_to "🚀 Myapp", root_path, class: "logo-link" %>
+    </div>
+    
+    <nav class="main-nav">
+      <%= link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}" %>
+      <%= link_to "Articles", articles_path, class: "nav-link #{'active' if current_page?(articles_path)}" %>
+      <%= link_to "About", about_path, class: "nav-link #{'active' if current_page?(about_path)}" %>
+      <%= link_to "Contact", contact_path, class: "nav-link #{'active' if current_page?(contact_path)}" %>
+    </nav>
+  </div>
+</header>

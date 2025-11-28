@@ -24,6 +24,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/header" %>
+    
+    <main class="container main-content">
+      <!-- Flash messages -->
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+      
+      <%= yield %>
+    </main>
+    
+    <%= render "shared/footer" %>
   </body>
 </html>
