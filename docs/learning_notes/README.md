@@ -49,13 +49,15 @@
 
 ### 🔄 Đang học
 
-6. **Task 6: Active Record Queries** (Sắp bắt đầu)
+6. **[Task 6: Active Record Queries](task_06_queries.md)**
    - Find, where, order
    - Joins và includes
    - N+1 problem
-   - Database optimization
+   - **Ngày hoàn thành:** 28/11/2025
 
-7. **Task 7: Associations**
+### 🔄 Đang học
+
+7. **Task 7: Associations** (Sắp bắt đầu)
    - One-to-Many
    - Many-to-Many
    - Polymorphic associations
@@ -93,7 +95,7 @@
 ## 📊 Tiến độ
 
 ```
-[█████████████████████████░░░░░] 50% - Đã hoàn thành 5/10 tasks cơ bản
+[██████████████████████████████░░░░░] 60% - Đã hoàn thành 6/10 tasks cơ bản
 ```
 
 ---

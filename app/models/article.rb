@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  belongs_to :category, optional: true
+
   # Enums
   enum :status, { draft: 0, published: 1, archived: 2 }
 
