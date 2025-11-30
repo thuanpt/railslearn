@@ -60,6 +60,6 @@ class ArticlesController < ApplicationController
   
   # Strong parameters - chỉ cho phép các attributes được phép
   def article_params
-    params.require(:article).permit(:title, :body, :published, :category_id, :tag_list)
+    params.require(:article).permit(:title, :body, :published, :category_id, :tag_list, comments_attributes: [:id, :body, :_destroy])
   end
 end

@@ -65,21 +65,17 @@
 ### 🔄 Đang học
 
 8. **[Task 8: Forms & User Input](task_08_forms.md)**
+9. **[Task 8: Forms & User Input](task_08_forms.md)**
    - Virtual Attributes (Tags)
    - Nested Resources (Comments)
    - **Ngày hoàn thành:** 28/11/2025
 
 ### 🔄 Đang học
 
-9. **Task 9: Strong Parameters** (Sắp bắt đầu)
-   - Security best practices
-   - Nested parameters
-   - Arrays và hashes
-
-10. **Task 10: File Uploads**
+10. **Task 10: File Uploads** (Sắp bắt đầu)
     - Active Storage setup
     - Image processing
-    - Direct uploads
+    - Cloud storage (S3) - Optionalds
 
 ---
 
@@ -99,7 +95,7 @@
 ## 📊 Tiến độ
 
 ```
-[████████████████████████████████████████░░░] 80% - Đã hoàn thành 8/10 tasks cơ bản
+[█████████████████████████████████████████████░] 90% - Đã hoàn thành 9/10 tasks cơ bản
 ```
 
 ---

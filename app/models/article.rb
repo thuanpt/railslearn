@@ -3,6 +3,8 @@ class Article < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_many :comments, as: :commentable, dependent: :destroy
+  
+  accepts_nested_attributes_for :comments, allow_destroy: true, reject_if: :all_blank
 
   # Enums
   enum :status, { draft: 0, published: 1, archived: 2 }

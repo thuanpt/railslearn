@@ -52,6 +52,24 @@
     <%= form.label :published, "Xuất bản ngay", style: "cursor: pointer; color: #374151;" %>
   </div>
 
+  <!-- Nested Comments Fields -->
+  <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 10px;">
+    <h4 style="margin-top: 0; color: #374151;">Manage Comments (Nested Attributes):</h4>
+    <%= form.fields_for :comments do |comments_form| %>
+      <div style="margin-bottom: 15px; padding: 10px; background: #f9fafb; border-radius: 6px;">
+        <%= comments_form.label :body, "Comment Body:", style: "font-size: 0.9em; font-weight: 600;" %>
+        <%= comments_form.text_field :body, style: "width: 100%; padding: 6px; border: 1px solid #d1d5db; border-radius: 4px;" %>
+        
+        <% unless comments_form.object.new_record? %>
+          <div style="margin-top: 5px;">
+            <%= comments_form.check_box :_destroy %>
+            <%= comments_form.label :_destroy, "Delete this comment", style: "color: #dc2626; font-size: 0.9em;" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
   <!-- Submit button -->
   <div style="display: flex; gap: 10px; margin-top: 10px;">
     <%= form.submit article.new_record? ? "Tạo Article" : "Cập Nhật", 
