@@ -1,11 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  body: MyText
-  published: false
+  title: First Article
+  body: This is the body of the first article and it is long enough.
+  published: true
+  user: one
+  category: one
+  status: published
 
 two:
-  title: MyString
-  body: MyText
+  title: Second Article
+  body: This is the body of the second article and it is long enough.
   published: false
+  user: two
+  category: two
+  status: draft
