@@ -72,10 +72,17 @@
 
 ### 🔄 Đang học
 
-10. **Task 10: File Uploads** (Sắp bắt đầu)
+10. **[Task 10: File Uploads](task_10_file_uploads.md)**
     - Active Storage setup
     - Image processing
-    - Cloud storage (S3) - Optionalds
+    - **Ngày hoàn thành:** 03/12/2025
+
+### 🔄 Đang học
+
+11. **Task 11: User Authentication** (Sắp bắt đầu)
+    - Devise / has_secure_password
+    - Login / Logout
+    - Sign up
 
 ---
 
@@ -95,7 +102,7 @@
 ## 📊 Tiến độ
 
 ```
-[█████████████████████████████████████████████░] 90% - Đã hoàn thành 9/10 tasks cơ bản
+[██████████████████████████████████████████████████] 100% - Đã hoàn thành 10/10 tasks cơ bản
 ```
 
 ---

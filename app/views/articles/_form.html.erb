@@ -25,6 +25,13 @@
         onblur: "this.style.borderColor='#d1d5db'" %>
   </div>
 
+  <!-- Cover Image field -->
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <%= form.label :cover_image, "Ảnh bìa:", style: "font-weight: 600; color: #374151;" %>
+    <%= form.file_field :cover_image, 
+        style: "padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; background: white;" %>
+  </div>
+
   <!-- Body field -->
   <div style="display: flex; flex-direction: column; gap: 8px;">
     <%= form.label :body, "Nội dung:", style: "font-weight: 600; color: #374151;" %>

@@ -5,6 +5,11 @@
 
   <article style="background: white; border-radius: 8px; padding: 30px;">
     <header style="border-bottom: 2px solid #e5e7eb; padding-bottom: 20px; margin-bottom: 20px;">
+    <% if @article.cover_image.attached? %>
+      <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <%= image_tag @article.cover_image, style: "width: 100%; max-height: 400px; object-fit: cover;" %>
+      </div>
+    <% end %>
       <h1 style="color: #111827; margin: 0 0 10px 0;"><%= @article.title %></h1>
       
       <div style="display: flex; gap: 15px; align-items: center; color: #6b7280; font-size: 14px;">

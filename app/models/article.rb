@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
   has_many :comments, as: :commentable, dependent: :destroy
   
+  has_one_attached :cover_image
+  
   accepts_nested_attributes_for :comments, allow_destroy: true, reject_if: :all_blank
 
   # Enums
