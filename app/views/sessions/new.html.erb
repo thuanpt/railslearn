@@ -1,0 +1,21 @@
+<div style="max-width: 400px; margin: 50px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+  <h2 style="text-align: center; color: #1f2937; margin-bottom: 30px;">Login</h2>
+
+  <%= form_with(url: login_path, local: true, style: "display: flex; flex-direction: column; gap: 20px;") do |form| %>
+    <div>
+      <%= form.label :email, style: "display: block; font-weight: 600; margin-bottom: 5px;" %>
+      <%= form.email_field :email, style: "width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px;" %>
+    </div>
+
+    <div>
+      <%= form.label :password, style: "display: block; font-weight: 600; margin-bottom: 5px;" %>
+      <%= form.password_field :password, style: "width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px;" %>
+    </div>
+
+    <%= form.submit "Login", style: "background: #2563eb; color: white; padding: 12px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;" %>
+  <% end %>
+
+  <p style="text-align: center; margin-top: 20px;">
+    Don't have an account? <%= link_to "Sign Up", signup_path, style: "color: #2563eb; text-decoration: none;" %>
+  </p>
+</div>

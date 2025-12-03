@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   
   # RESTful routes cho Articles
   # resources tự động tạo 7 routes: index, show, new, create, edit, update, destroy
+  # Authentication Routes
+  get 'signup', to: 'users#new'
+  post 'users', to: 'users#create'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
   resources :articles do
     resources :comments
   end
