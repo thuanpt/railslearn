@@ -87,9 +87,17 @@
 
 ### 🔄 Đang học
 
-12. **Task 12: Authorization** (Sắp bắt đầu)
-    - Pundit / Custom Authorization
-    - Roles (Admin/User)
+12. **[Task 12: Authorization](task_12_authorization.md)**
+    - Resource Ownership
+    - Controller & View Authorization
+    - **Ngày hoàn thành:** 03/12/2025
+
+### 🔄 Đang học
+
+13. **Task 13: Unit Tests** (Sắp bắt đầu)
+    - Minitest
+    - Model Testing
+    - Fixtures
 
 ---
 
@@ -109,7 +117,7 @@
 ## 📊 Tiến độ
 
 ```
-[██████████████████████████████████████████████████░] 92% - Đã hoàn thành 11/12 tasks cơ bản
+[██████████████████████████████████████████████████] 100% - Đã hoàn thành 12/12 tasks cơ bản
 ```
 
 ---

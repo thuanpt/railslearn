@@ -26,10 +26,10 @@
                 <span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px;">Draft</span>
               <% end %>
               
-              <span style="color: var(--gray-500);">
-                <%= time_ago_in_words(article.created_at) %> ago
-              </span>
-            </div>
+              <div class="article-meta" style="color: #6b7280; font-size: 0.9rem; margin-bottom: 15px;">
+            <span>By <strong><%= article.user&.name || "Unknown" %></strong></span> | 
+            <span><%= time_ago_in_words(article.created_at) %> ago</span> |
+            <span>Category: <%= article.category&.name || "None" %></span>
           </div>
           
           <div style="display: flex; gap: 10px; margin-left: 20px;">

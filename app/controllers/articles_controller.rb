@@ -2,64 +2,82 @@ class ArticlesController < ApplicationController
   # Callback: chạy trước các action được chỉ định
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   
-  # GET /articles - Hiển thị danh sách tất cả articles
+  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :require_user, except: %i[ index show ]
+  before_action :require_same_user, only: %i[ edit update destroy ]
+
+  # GET /articles or /articles.json
   def index
-    @articles = Article.all.order(created_at: :desc)
-    # Rails tự động render: app/views/articles/index.html.erb
+    @articles = Article.all
   end
-  
-  # GET /articles/:id - Hiển thị chi tiết 1 article
+
+  # GET /articles/1 or /articles/1.json
   def show
-    # @article đã được set bởi before_action
   end
-  
-  # GET /articles/new - Hiển thị form tạo article mới
+
+  # GET /articles/new
   def new
     @article = Article.new
   end
-  
-  # POST /articles - Xử lý tạo article mới
+
+  # GET /articles/1/edit
+  def edit
+  end
+
+  # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
-    
-    if @article.save
-      # Lưu thành công -> chuyển đến trang show
-      redirect_to @article, notice: "Article được tạo thành công!"
-    else
-      # Lưu thất bại -> render lại form với errors
-      render :new, status: :unprocessable_entity
+    @article.user = current_user
+
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: "Article was successfully created." }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
-  
-  # GET /articles/:id/edit - Hiển thị form chỉnh sửa
-  def edit
-    # @article đã được set bởi before_action
-  end
-  
-  # PATCH/PUT /articles/:id - Xử lý cập nhật
+
+  # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    if @article.update(article_params)
-      redirect_to @article, notice: "Article được cập nhật thành công!"
-    else
-      render :edit, status: :unprocessable_entity
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to @article, notice: "Article was successfully updated." }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
-  
-  # DELETE /articles/:id - Xóa article
+
+  # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article.destroy
-    redirect_to articles_path, notice: "Article đã được xóa!"
+    @article.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to articles_path, status: :see_other, notice: "Article was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
-  
+
   private
-  
-  # Callback để tìm article theo ID
-  def set_article
-    @article = Article.find(params[:id])
-  end
-  
-  # Strong parameters - chỉ cho phép các attributes được phép
-  def article_params
-    params.require(:article).permit(:title, :body, :published, :category_id, :tag_list, :cover_image, comments_attributes: [:id, :body, :_destroy])
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_article
+      @article = Article.find(params[:id])
+    end
+
+    def require_same_user
+      if current_user != @article.user
+        flash[:alert] = "You can only edit or delete your own article"
+        redirect_to @article
+      end
+    end
+
+    # Strong parameters - chỉ cho phép các attributes được phép
+    def article_params
+      params.require(:article).permit(:title, :body, :published, :category_id, :tag_list, :cover_image, comments_attributes: [:id, :body, :_destroy])
+    end
 end

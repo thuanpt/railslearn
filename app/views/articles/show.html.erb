@@ -32,8 +32,10 @@
     </div>
     
     <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; display: flex; gap: 15px;">
-      <%= link_to "✏️ Chỉnh sửa", edit_article_path(@article), style: "background: #059669; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
-      <%= link_to "🗑️ Xóa", @article, data: { turbo_method: :delete, turbo_confirm: "Bạn chắc chắn muốn xóa article này?" }, style: "background: #dc2626; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
+      <% if logged_in? && current_user == @article.user %>
+        <%= link_to "✏️ Chỉnh sửa", edit_article_path(@article), style: "background: #059669; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
+        <%= link_to "🗑️ Xóa", @article, data: { turbo_method: :delete, turbo_confirm: "Bạn chắc chắn muốn xóa article này?" }, style: "background: #dc2626; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;" %>
+      <% end %>
     </footer>
   </article>
 
