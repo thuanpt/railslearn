@@ -8,14 +8,6 @@
 <% if @articles.any? %>
   <div style="display: grid; gap: 20px;">
     <% @articles.each do |article| %>
-      <div class="card">
-        <div style="display: flex; justify-content: space-between; align-items: start;">
-          <div style="flex: 1;">
-            <h2 style="margin-top: 0;">
-              <%= link_to article.title, article, style: "text-decoration: none;" %>
-            </h2>
-            
-            <p style="color: var(--gray-500);">
               <%= truncate(article.body, length: 150) %>
             </p>
             
@@ -38,7 +30,8 @@
             <%= link_to "Delete", article, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger", style: "padding: 5px 10px; font-size: 0.9rem;" %>
           </div>
         </div>
-      </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% else %>
