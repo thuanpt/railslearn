@@ -29,6 +29,13 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  # API Routes
+  namespace :api do
+    namespace :v1 do
+      resources :articles
+    end
+  end
   
   # Cách viết khác (tương đương):
   # get "about" => "pages#about"
