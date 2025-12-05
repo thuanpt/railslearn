@@ -70,3 +70,5 @@ gem "jwt", "~> 3.1"
 gem "sidekiq", "~> 8.0"
 
 gem "letter_opener", "~> 1.10", group: :development
+
+gem "redis", "~> 5.4"

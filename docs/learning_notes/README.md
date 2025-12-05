@@ -132,10 +132,21 @@
 
 ### 🔄 Đang học
 
-19. **Task 17: Caching & Performance** (Đã xong cơ bản, đang làm Deep Dive)
+19. **[Task 17: Caching & Performance](task_17_caching_performance.md)**
     - Fragment Caching
     - N+1 Query Fixes
     - **Ngày hoàn thành:** 04/12/2025
+
+20. **[Task 17b: Advanced Performance](task_17b_advanced_performance.md)**
+    - Database Indexing
+    - Redis Cache Store
+    - **Ngày hoàn thành:** 05/12/2025
+
+### 🔄 Đang học
+
+21. **Task 18: Deployment** (Sắp bắt đầu)
+    - Docker
+    - Render / Fly.io
 
 ### 🔄 Đang học
 
