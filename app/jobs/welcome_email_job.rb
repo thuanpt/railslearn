@@ -5,8 +5,9 @@ class WelcomeEmailJob < ApplicationJob
     # Do something later
     Rails.logger.info "📨 Starting background job: Sending welcome email to #{user.email}..."
     
-    # Simulate a long-running task (e.g., contacting an external email service)
-    sleep 5
+    # Send email using Action Mailer
+    # We use deliver_now because the job itself is already running in background via Sidekiq
+    UserMailer.welcome_email(user).deliver_now
     
     Rails.logger.info "✅ Done: Welcome email sent to #{user.email}!"
   end

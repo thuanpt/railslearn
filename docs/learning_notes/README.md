@@ -114,16 +114,25 @@
     - **Ngày hoàn thành:** 04/12/2025
 
 15. **[Task 15b: API Authentication](task_15b_api_authentication.md)**
+16. **[Task 15b: API Authentication](task_15b_api_authentication.md)**
     - JWT (JSON Web Token)
     - Secure API Endpoints
     - **Ngày hoàn thành:** 05/12/2025
 
-16. **[Task 16: Background Jobs](task_16_background_jobs.md)**
+### ✅ Đã hoàn thành
+
+17. **[Task 16: Background Jobs](task_16_background_jobs.md)**
     - Active Job
-    - Sidekiq / GoodJob (Concept)
     - **Ngày hoàn thành:** 04/12/2025
 
-17. **[Task 17: Caching & Performance](task_17_caching_performance.md)**
+18. **[Task 16b: Real Emails & Sidekiq](task_16b_real_emails_sidekiq.md)**
+    - Action Mailer (Letter Opener)
+    - Sidekiq & Redis
+    - **Ngày hoàn thành:** 05/12/2025
+
+### 🔄 Đang học
+
+19. **Task 17: Caching & Performance** (Đã xong cơ bản, đang làm Deep Dive)
     - Fragment Caching
     - N+1 Query Fixes
     - **Ngày hoàn thành:** 04/12/2025
