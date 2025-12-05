@@ -108,20 +108,20 @@
     - **Ngày hoàn thành:** 03/12/2025
 
 ### 🔄 Đang học
-
-15. **[Task 15: API Development](task_15_api_development.md)**
+14. **[Task 14: API Development](task_15_api_development.md)**
     - API Controller
     - JSON Response
     - **Ngày hoàn thành:** 04/12/2025
 
-### 🔄 Đang học
+15. **[Task 15b: API Authentication](task_15b_api_authentication.md)**
+    - JWT (JSON Web Token)
+    - Secure API Endpoints
+    - **Ngày hoàn thành:** 05/12/2025
 
 16. **[Task 16: Background Jobs](task_16_background_jobs.md)**
     - Active Job
     - Sidekiq / GoodJob (Concept)
     - **Ngày hoàn thành:** 04/12/2025
-
-### 🔄 Đang học
 
 17. **[Task 17: Caching & Performance](task_17_caching_performance.md)**
     - Fragment Caching

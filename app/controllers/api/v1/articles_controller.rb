@@ -1,6 +1,7 @@
 module Api
   module V1
-    class ArticlesController < ActionController::API
+    class ArticlesController < ApplicationController
+      before_action :authorize_request, except: %i[ index show ]
       before_action :set_article, only: %i[ show update destroy ]
 
       # GET /api/v1/articles
@@ -16,11 +17,7 @@ module Api
 
       # POST /api/v1/articles
       def create
-        @article = Article.new(article_params)
-        # For simplicity in this task, we might skip user association or assign a default user
-        # In a real API, we'd use token authentication to identify the user.
-        # For now, let's assign the first user to make it work.
-        @article.user = User.first 
+        @article = @current_user.articles.build(article_params)
 
         if @article.save
           render json: @article, status: :created
